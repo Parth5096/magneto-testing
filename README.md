@@ -1,2 +1,2 @@
-# lokal-marketplace-app
-Node Backend Server for Lokal
+# lokal-marketplace-app-server
+Node Backend Server for Lokal.
