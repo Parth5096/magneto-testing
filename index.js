@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', (req, res) => {
-	res.send("hello from lokal...")
+	res.send("hello from lokal... and testing ci cd")
 });
 
 const port = 3000;
