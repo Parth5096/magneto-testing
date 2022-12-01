@@ -41,6 +41,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ~/lokal
+          cd ~/cicd
           git pull origin master
           npm install 
           npm run build
