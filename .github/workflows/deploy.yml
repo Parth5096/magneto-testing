@@ -6,13 +6,13 @@ on:
       - master
 
 jobs:
-  test:
+  build:
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x, 12.x, 14.x, 15.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -20,15 +20,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install and test
+    - name: npm install and build
       run: |
         npm install
-        npm run build
+        npm run build 
       env:
         CI: true
 
   deploy:
-    needs: [test]
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +40,8 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          cd ~/node-github-demo
+          cd ~/lokal
           git pull origin master
-          npm install --production
-          pm2 restart node-app
+          npm install 
+          npm run build
+          pm2 restart index
