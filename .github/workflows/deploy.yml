@@ -35,47 +35,10 @@ jobs:
     - name: SSH and deploy node app
       uses: appleboy/ssh-action@master
       with:
-        host: 45.79.123.151
-        username: ubuntu
-        key: -----BEGIN OPENSSH PRIVATE KEY-----
-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
------END OPENSSH PRIVATE KEY-----
-        port: 22
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
         script: |
           cd ~/lokal
           git pull origin master
