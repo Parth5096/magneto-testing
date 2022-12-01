@@ -40,7 +40,6 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          cd ~/lokal
           cd ~/cicd
           git pull origin master
           npm install 
